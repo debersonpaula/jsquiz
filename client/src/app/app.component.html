@@ -1,0 +1,6 @@
+<app-topbar></app-topbar>
+<app-sidebar #sidebar>
+    <app-header (toggleSidenav)="sidebar.sidenav.toggle()"></app-header>
+    <router-outlet></router-outlet>
+    <app-footer></app-footer>
+</app-sidebar>

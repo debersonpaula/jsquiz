@@ -1,0 +1,26 @@
+<div [innerHTML]="data.description"></div>
+<hr>
+<code>
+function({{data.parameters}}){{'{'}}
+  <textarea #codearea>
+// Digite o código aqui
+  </textarea>
+{{'}'}}
+</code>
+
+<button (click)="test()">Testar</button>
+<button>Submeter</button>
+<hr>
+<div *ngIf="testAction.error">
+  Erro de compilação: {{testAction.error}}
+</div>
+<div *ngIf="testAction.fail">
+  Falha no teste. <br>
+  Teste executado = <b>{{testAction.fail.received}}</b><br>
+  Teste esperado = <b>{{testAction.fail.expected}}</b>
+</div>
+<div *ngIf="testAction.success">
+    Sucesso. <br>
+    Teste executado = <b>{{testAction.success.received}}</b><br>
+    Teste esperado = <b>{{testAction.success.expected}}</b>
+  </div>

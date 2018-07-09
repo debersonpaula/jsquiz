@@ -1,0 +1,7 @@
+<h3>Categoria: {{categoryName}}</h3>
+
+<ul>
+  <li *ngFor="let item of quizList">
+    {{item.title}} [<a [routerLink]="'/view/'+category+'/'+item.id">Ver</a>]
+  </li>
+</ul>

@@ -1,0 +1,18 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [mode]="isScreenSmall() ? 'over' : 'side'" [opened]="!isScreenSmall()" fixedTopGap="56">
+    <nav>
+      <h3>Menu</h3>
+      <ul>
+        <li>
+          <a routerLink="/home" routerLinkActive="item-selected">Home</a>
+        </li>
+        <li *ngFor="let item of menuData">
+          <a [routerLink]="'/list/'+item.category" routerLinkActive="item-selected">{{item.categoryName}}</a>
+        </li>
+      </ul>
+    </nav>
+  </mat-sidenav>
+  <div class="main">
+    <ng-content></ng-content>
+  </div>
+</mat-sidenav-container>
