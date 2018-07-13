@@ -10,6 +10,6 @@ export class QuizDataService {
   constructor(private http: HttpClient) { }
 
   public getQuizList(): Observable<TQuiz> {
-    return <any>(this.http.get('http://localhost:3000/quiz'));
+    return <any>(this.http.get('http://localhost:3000/data'));
   }
 }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { QuizDataService } from '../services/quizdata.service';
 import { TQuiz } from '../interfaces/quiz.interface';
 
@@ -10,7 +10,7 @@ export class QuizData {
 
     constructor(private service: QuizDataService) { }
 
-    get data() {
+    get data(): Observable<any> {
         return this._data;
     }
 

@@ -8,7 +8,13 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.get('/', (req, res) => res.send('Hello World!'));
-app.get('/quiz', (req, res) => res.json(makedata));
+app.use(express.static('client'));
+
+// app.get('/', (req, res) => res.send('Hello World!'));
+app.get('/data', (req, res) => res.json(makedata));
+
+app.all('/*', (req, res, next) => {
+    res.sendFile('client/index.html', { root: __dirname });
+});
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));
